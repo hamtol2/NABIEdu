@@ -11,6 +11,44 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator animator;       // Animator 컴포넌트.
 
+    // 입력 함수(메소드, method).
+    // 좌우 입력 함수.
+    // 반환유형_함수이름(입력변수1, 입력변수2, ...)
+    float GetHorizontalInput()
+    {
+        if (Input.GetKey(KeyCode.A)
+            || Input.GetKey(KeyCode.LeftArrow))
+        {
+            return -1f;
+        }
+
+        if (Input.GetKey(KeyCode.D)
+            || Input.GetKey(KeyCode.RightArrow))
+        {
+            return 1f;
+        }
+
+        return 0f;
+    }
+
+    // 상하 입력 함수.
+    float GetVerticalInput()
+    {
+        if (Input.GetKey(KeyCode.W)
+            || Input.GetKey(KeyCode.UpArrow))
+        {
+            return 1f;
+        }
+
+        if (Input.GetKey(KeyCode.S)
+            || Input.GetKey(KeyCode.DownArrow))
+        {
+            return -1f;
+        }
+
+        return 0f;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,10 +61,12 @@ public class PlayerMovement : MonoBehaviour
     {
         // 입력 받기.
         // W/위:1, S/아래:-1, 없음:0, 
-        float v = Input.GetAxis("Vertical");
+        //float v = Input.GetAxis("Vertical");
+        float v = GetVerticalInput();
 
         // 좌우 입력.
-        float h = Input.GetAxis("Horizontal");
+        //float h = Input.GetAxis("Horizontal");
+        float h = GetHorizontalInput();
 
         // 애니메이션 설정.
         // || -> 또는.
@@ -42,7 +82,6 @@ public class PlayerMovement : MonoBehaviour
             // 멈추는 애니메이션 재생.
             animator.SetInteger("state", 0);
         }
-
 
         // 앞/뒤로 이동.
         //myTransform.position =
