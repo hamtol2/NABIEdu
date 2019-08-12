@@ -12,6 +12,8 @@ namespace Step03
 
         public Animator animator;       // 애니메이터 컴포넌트.
 
+        public Collider attackCollider; // 무기에 붙은 콜라이더.
+
         public bool isAttack = false;  // 공격 중인지 확인하는 변수.
 
         //public Transform myTransform;
@@ -52,6 +54,20 @@ namespace Step03
             }
 
             return 0f;
+        }
+
+        // 공격 애니메이션 시작할 때 실행.
+        public void AttackStart()
+        {
+            // 공격 박스 콜라이더 켜기. 
+            attackCollider.enabled = true;
+        }
+
+        // 공격 애니메이션 끝나면 실행.
+        public void AttackEnd()
+        {
+            // 공격 박스 콜라이더 끄기.
+            attackCollider.enabled = false;
         }
 
         // Start is called before the first frame update

@@ -16,12 +16,18 @@ namespace Step03
 
             // 검색된 물체에서 컴포넌트 검색.
             playerMovement = player.GetComponent<PlayerMovement>();
+
+            playerMovement.AttackStart();
+
         }
 
         public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             // 공격 종료로 설정.
             playerMovement.isAttack = false;
+
+            playerMovement.AttackEnd();
+
         }
     }
 }
