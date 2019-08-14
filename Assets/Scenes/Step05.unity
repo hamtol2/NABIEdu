@@ -370,6 +370,7 @@ MonoBehaviour:
   bomb: {fileID: 1134052025}
   firePosition: {fileID: 1610371150}
   lineRenderer: {fileID: 329914693}
+  bullet: {fileID: 5758376213922061025, guid: a829738da5c8d4c3a8627dc6eaf00cc6, type: 3}
 --- !u!120 &329914693
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -377,7 +378,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 329914689}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
