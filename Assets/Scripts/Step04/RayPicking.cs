@@ -31,6 +31,7 @@ namespace Step04
                 // 1: 레이저 정보. 
                 // 2: 충돌한 물체 정보 저장용 변수 전달.
                 // 3: 레이저의 길이(단위: 미터).
+
                 if (Physics.Raycast(ray, out hit, 100f) == true)
                 {
                     // 태그 확인(Prop 인지 확인).
