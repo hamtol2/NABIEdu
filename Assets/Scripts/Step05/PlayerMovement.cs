@@ -26,7 +26,7 @@ namespace Step05
 
             // 회전.
             // yaw=Y축 회전
-            float yaw = Input.GetAxis("Mouse X");
+            float yaw = Input.GetAxis("Mouse X") * 3f;
             transform.eulerAngles
                 = transform.eulerAngles
                 + transform.up * yaw;
