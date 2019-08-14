@@ -20,6 +20,17 @@ namespace Step05
                 firePosition.position + firePosition.forward * 10f
             );
 
+            // 라인 충돌 검출용 레이 캐스트 발사.
+            Ray lineRay = new Ray();
+            lineRay.origin = firePosition.position;
+            lineRay.direction = firePosition.forward;
+
+            RaycastHit lineHit;
+            if (Physics.Raycast(lineRay, out lineHit, 10f))
+            {
+                lineRenderer.SetPosition(1, lineHit.point);
+            }
+
             // 마우스 왼쪽 버튼 클릭.
             if (Input.GetMouseButtonDown(0))
             {
@@ -40,6 +51,9 @@ namespace Step05
                         // 충돌 위치.
                         Vector3 hitPoint = hit.point;
 
+                        // 라인 렌더러 끝 위치 조정.
+                        lineRenderer.SetPosition(1, hitPoint);
+
                         // 폭발 파티클 위치 변경.
                         bomb.transform.position = hitPoint;
 
@@ -51,6 +65,11 @@ namespace Step05
                         Destroy(hit.transform.gameObject);
                     }
                 }
+            }
+
+            else
+            {
+                
             }
         }
     }
