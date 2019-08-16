@@ -36,9 +36,9 @@ namespace Step05
             // 마우스 왼쪽 버튼 클릭.
             if (Input.GetMouseButtonDown(0))
             {
-                GameObject newBullet = Instantiate(bullet);
-                newBullet.transform.position = firePosition.position;
-                newBullet.transform.rotation = firePosition.rotation;
+                //GameObject newBullet = Instantiate(bullet);
+                //newBullet.transform.position = firePosition.position;
+                //newBullet.transform.rotation = firePosition.rotation;
 
                 // 레이저 정보 생성.
                 Ray ray = new Ray();
